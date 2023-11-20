@@ -1,0 +1,151 @@
+body
+{
+    font-size: calc(0.5vw + 10px);
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-image: url(../Images/Laitue0.jpg);
+    background-size:cover;
+    background-position: top;
+}
+
+input
+{
+    padding: 0.625em;
+    border: #000 solid calc(0.05vw + 0.1em);
+}
+
+input[type="text"], input[type="email"], input[type="password"]
+{
+    height: 1em;
+}
+
+input[type="file"]
+{
+    border: none;
+    padding: 0.625em 0;
+}
+
+h1
+{
+    font-size: calc(1.75em + 1.75vw);
+    /* font-size: 300%; */
+    text-align: center;
+}
+
+h2
+{
+    font-size: 150%;
+}
+
+.fieldError
+{
+    color: #B00;
+    font-style: italic;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.page
+{
+    display: flex;
+    flex-direction: column;
+    padding: 4.5em 16vw;
+    gap: 2em;
+}
+
+.multipleElement
+{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 2em;
+}
+
+.multipleElement a
+{
+    display: flex;
+    text-decoration: none;
+}
+
+.multipleElement *
+{
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.formSpanNote
+{
+    flex: 3 0 0;
+    min-width: 150px;
+}
+
+.myForm
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 2em;
+    border: #000 solid calc(0.1vw + 0.2em);
+    background-color: #eee;
+    background-image: linear-gradient(#e6e6e6cc, #e6e6e6cc), url(../Images/Laitue2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.label-input
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125em;
+    min-width: 0;
+}
+
+.label-input *
+{
+    min-width: 0;
+}
+
+/* Le bandeau tout en haut */
+.userWelcome
+{
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    padding: 0.5em 1.5em;
+    gap: 1.5em;
+    background-color: #00000080;
+    border-bottom: #000 solid calc(0.025vw + 0.15em);
+    backdrop-filter: blur(10px);
+    color: #fff;
+}
+
+.userWelcome *
+{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 170px;
+    text-align: center;
+    padding: 1px;
+    flex: 1 0 0;
+}
+
+@media only screen and (max-width: 600px)
+{
+    .multipleElement
+    {
+        flex-direction: column-reverse;
+        flex-wrap: nowrap;
+        align-items: initial;
+    }
+
+    .formSpanNote
+    {
+        min-width: 0;
+    }
+}

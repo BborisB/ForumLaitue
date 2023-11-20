@@ -1,0 +1,96 @@
+#chat
+{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex: 1 0 0;
+    padding: 2em;
+}
+
+.message
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+}
+
+.message h2:last-child
+{
+    text-align: end;
+}
+
+hr
+{
+    width: 100%;
+}
+
+.chat-enterMessage
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #eee;
+    border: #000 solid calc(0.1vw + 0.2em);
+}
+
+.enterMessage
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-top: #000 solid calc(0.1vw + 0.2em);
+    padding: 2em;
+}
+
+#messageText
+{
+    padding: 0.625em;
+    border: #000 solid calc(0.05vw + 0.1em);
+    background-color: #fff;
+    max-height: 6em;
+    overflow: auto;
+}
+
+#messageText[contenteditable][placeholder]:empty:before
+{
+    content: attr(placeholder);
+    position: absolute;
+    color: gray;
+    background-color: transparent;
+}
+
+#textAreaDiv
+{
+    display: flex;
+    background-color: #fff;
+    max-height: 25vh;
+    overflow: auto;
+    border: #000 solid calc(0.05vw + 0.1em);
+}
+
+#textAreaMessage
+{
+    font: inherit;
+    resize: none;
+    outline: none;
+    background-color: #fff;
+    width: 100%;
+    padding: 0.625em 0.625em 0 0.625em;
+    overflow: hidden;
+}
+
+.page
+{
+    height: 100%;
+}
+
+.newBody
+{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}

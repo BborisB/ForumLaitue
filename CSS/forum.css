@@ -1,0 +1,19 @@
+.masterCard
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em;
+    border: #000 solid calc(0.1vw + 0.2em);
+    color: #000;
+}
+
+.masterCard h1
+{
+    font-size: 200%;
+}
+
+.masterCard:hover
+{
+    box-shadow: 0em 0em 2em;
+}

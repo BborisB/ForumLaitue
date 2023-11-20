@@ -1,0 +1,14 @@
+#registerSuccessful
+{
+    display: none;
+    align-items: center;
+}
+
+#pfpPreview
+{
+    border: #000 solid calc(0.05vw + 0.1em);
+    height: 7em;
+    width: 7em;
+    object-fit: cover;
+    object-position: center;
+}
