@@ -8,7 +8,7 @@
 <body>
     <div class="page">
         <h1>Se connecter</h1>
-        <form class="myForm" id="loginForm" action="forum.html">
+        <form class="myForm myFormColumn" id="loginForm" action="forum.html">
             <span class="fieldError" id="loginErrorText"></span>
             <div class="label-input">
                 <label for="email">Email (*)</label>

@@ -13,14 +13,34 @@ let confirmPasswordErrorText = document.querySelector("#confirmPasswordErrorText
 let pfp = document.querySelector("#pfp");
 let pfpErrorText = document.querySelector("#pfpErrorText");
 let pfpPreview = document.querySelector("#pfpPreview");
+let pfpContainer = document.querySelector("#pfpContainer");
+let pfpBtn = document.querySelector("#pfpBtn");
 let emailRe = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 let passwordRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#+-^\[\]])(?=.{8,})/;
-
+function pfpResize()
+{
+    pfpContainer.style.width = pfpPreview.offsetHeight + "px";
+    pfpBtn.style.width = pfpContainer.offsetHeight + "px";
+}
+pfpResize();
+new ResizeObserver(pfpResize).observe(pfpContainer);
 pfp.addEventListener("change", () =>
 {
-    pfpPreview.style.display = "inline";
-    if(pfp.value)
+    // pfpPreview.style.display = "inline";
+    if (pfp.value)
+    {
         pfpPreview.src = URL.createObjectURL(pfp.files[0]);
+    }
+});
+
+pfpBtn.addEventListener("click", (e) =>
+{
+    pfp.click();
+});
+
+pfpPreview.addEventListener("click", (e) =>
+{
+    pfp.click();
 });
 
 myForm.addEventListener("submit", (e)=>
@@ -111,15 +131,6 @@ function verifyRegister()
     {
         confirmPassword.style.borderColor = "#000000";
         confirmPasswordErrorText.textContent = "";
-    }
-    if(!pfp.value)
-    {
-        pfpErrorText.textContent = "Choisissez une image de profil.";
-    }
-    else
-    {
-        pfpErrorText.textContent = "";
-
     }
     return result
 }

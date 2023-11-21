@@ -6,6 +6,7 @@
     padding: 2em;
     border: #000 solid calc(0.1vw + 0.2em);
     color: #000;
+    /* align-self: stretch; */
 }
 
 .masterCard h1
