@@ -12,7 +12,7 @@
 .pfpDiv
 {
 	display: flex;
-	gap: 2em;
+	gap: 4em;
 }
 
 .pfpDiv2
@@ -50,6 +50,7 @@
 	.pfpDiv
 	{
 		flex-direction: column;
+		gap: 2em;
 	}
 
 	.pfpDiv2
@@ -62,6 +63,12 @@
 	#pfpContainer
 	{
 		flex: none;
+		width: 7em;
 		height: 7em;
+	}
+
+	#pfpBtn
+	{
+		width: 7em;
 	}
 }
