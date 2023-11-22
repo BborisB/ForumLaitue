@@ -32,8 +32,4 @@ if (isset($_POST["catTitle"]) && isset($_POST["catDesc"]))
         // header("location: ../Views/forum.php");
     }
 }
-else
-{
-    var_dump($_POST);
-}
 ?>

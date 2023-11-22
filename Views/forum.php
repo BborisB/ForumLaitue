@@ -13,6 +13,7 @@
     </div>
     <div class="page">
         <h1>Forum</h1>
+        <a href="addCategorie.php">Cliquez moi !</a>
         <div id="cards" class="multipleElement"></div>
     </div>
     <script src="../JavaScript/bandeau.js"></script>
