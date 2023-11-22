@@ -10,7 +10,7 @@
 <body>
     <div class="page">
         <h1>Ajouter une catégorie</h1>
-        <form class="myForm" action="forum.php" method="post">
+        <form class="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="label-input">
                 <label for="catTitle">Titre catégorie (*)</label>
                 <input type="text" maxlength="50" name="catTitle" id="catTitle" value="<?php echo $catTitle ?>">
@@ -19,8 +19,9 @@
             <div class="label-input">
                 <label for="catDesc">Description (*)</label>
                 <div class="myTextAreaDiv">
-                    <textarea maxlength="255" class="myTextArea" placeholder="Saisissez la description ..." name="catDesc" id="catDesc"><?php echo $catDesc ?></textarea>
+                    <textarea maxlength="255" class="myTextArea" name="catDesc" placeholder="Saisissez la description ..." id="catDesc"><?php echo $catDesc ?></textarea>
                 </div>
+                <!-- <input type="hidden" name="catDesc"> -->
                 <span class="fieldError" id="catDescTextError"><?php echo $catDescTextError ?></span>
             </div>
             <div class="multipleElement">

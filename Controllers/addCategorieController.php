@@ -29,7 +29,11 @@ if (isset($_POST["catTitle"]) && isset($_POST["catDesc"]))
     {
         $req = $connect->prepare("INSERT INTO categorie (titre, description) VALUES(?,?)");
         $req->execute(array($catTitle, $catDesc));
-        header("location: ../Views/forum.php");
+        // header("location: ../Views/forum.php");
     }
+}
+else
+{
+    var_dump($_POST);
 }
 ?>
