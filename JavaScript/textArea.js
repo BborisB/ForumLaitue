@@ -1,5 +1,5 @@
 let myTextAreas = document.querySelectorAll(".myTextArea");
-for(let myTextArea in myTextAreas)
+myTextAreas.forEach(myTextArea =>
 {
     function textAreaResize()
     {
@@ -11,4 +11,4 @@ for(let myTextArea in myTextAreas)
     myTextArea.addEventListener("input", textAreaResize);
     //Redimensionne le textArea quand il change de taille (surtout quand il change de largeur).
     new ResizeObserver(textAreaResize).observe(myTextArea);
-}
+});

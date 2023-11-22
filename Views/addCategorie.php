@@ -16,10 +16,13 @@
         </div>
         <div class="label-input">
             <label for="catDesc">Description (*)</label>
-            <textarea name="catDesc" id="catDesc"></textarea>
+            <div class="myTextAreaDiv">
+                <textarea class="myTextArea" name="catDesc" id="catDesc"></textarea>
+            </div>
             <span class="fieldError" id="catDescTextError"><?php echo $catDescTextError ?></span>
         </div>
     </form>
+    <script src="../JavaScript/textArea.js"></script>
 </body>
 
 </html>

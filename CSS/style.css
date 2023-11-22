@@ -136,6 +136,26 @@ h2
     flex: 1 0 0;
 }
 
+.myTextAreaDiv
+{
+    display: flex;
+    background-color: #fff;
+    max-height: 25vh;
+    overflow: auto;
+    border: #000 solid calc(0.05vw + 0.1em);
+}
+
+.myTextArea
+{
+    font: inherit;
+    resize: none;
+    outline: none;
+    background-color: #fff;
+    width: 100%;
+    padding: 0.625em 0.625em 0 0.625em;
+    overflow: hidden;
+}
+
 @media only screen and (max-width: 600px)
 {
     .multipleElement
