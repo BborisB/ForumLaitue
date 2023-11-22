@@ -17,7 +17,7 @@ if(verif())
         }
         move_uploaded_file($pfp['tmp_name'], "../PFP/" . $pfpFile);
         $connect = connect();
-        $req = $connect->prepare("INSERT INTO utilisateur (email, nom, prenom, motDePasse, photo, derniereConnection) VALUES(?,?,?,?,?,?)");
+        $req = $connect->prepare("INSERT INTO utilisateur (email, nom, prenom, motDePasse, photo, derniereConnexion) VALUES(?,?,?,?,?,?)");
         $req->execute(array($email, $lastName, $firstName, password_hash($password, PASSWORD_BCRYPT), $pfpFile, null));
         header("location: ../Views/registerSuccess.php");
     }
