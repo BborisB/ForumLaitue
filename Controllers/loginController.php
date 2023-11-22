@@ -3,6 +3,7 @@ require_once "../Includes/connectDb.php";
 $email = $password = $emailErrorText = $passwordErrorText = "";
 if(verif())
 {
+    $connect = connect();
     $user = $connect->query("SELECT * FROM utilisateur WHERE utilisateur.email = '$email'")->fetch();
     if($user)
     {
@@ -10,6 +11,12 @@ if(verif())
         header("location: ../Views/forum.php");
     }
 }
+
+/**
+ * Vérifie les donées saisies et retourne le résultat de la vérification.
+ *
+ * @return boolean Vrai si les données sont correctes, faux sinon.
+ */
 function verif() : bool
 {
     $result = true;
