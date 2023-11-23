@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once "../Includes/head.php"?>
+    <?php require_once "../Includes/head.php";
+    require_once "../Controllers/messageController.php";?>
     <title>Sujet</title>
-    <link rel="stylesheet" href="../CSS/subject.css">
+    <link rel="stylesheet" href="../CSS/message.css">
 </head>
 <body>
     <div class="newBody">
@@ -14,21 +15,27 @@
         </div>
         <div class="page">
             <div class="chat-enterMessage">
-                <div id="chat">
-                    <h1 id="title"></h1>
+                <div class="chat">
+                    <h1 id="title"><?php echo $sujet["titreSujet"]?></h1>
                     <hr/>
+                    <div class="message">
+                        <span>auteur</span>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt inventore aperiam repudiandae soluta ipsum, at iure ipsa eos sapiente repellat suscipit quam cum ad magnam provident quae accusantium est maiores!</span>
+                        <span></span>
+                    </div>
                 </div>
                 <div class="enterMessage">
-                    <div id="textAreaDiv">
-                        <textarea spellcheck="false" id="textAreaMessage" placeholder="Entrez un message." rows="1"></textarea>
+                    <div class="myTextAreaDiv">
+                        <textarea spellcheck="false" class="myTextArea" placeholder="Entrez un message." rows="1"></textarea>
                     </div>
-                    <button id="sendBtn">Envoyer</button>
+                    <button class="button" id="sendBtn">Envoyer</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="../JavaScript/bandeau.js"></script>
+    <!-- <script src="../JavaScript/bandeau.js"></script> -->
     <script src="../JavaScript/button.js"></script>
-    <script src="../JavaScript/sujet.js"></script>
+    <script src="../JavaScript/textArea.js"></script>
+    <!-- <script src="../JavaScript/sujet.js"></script> -->
 </body>
 </html>

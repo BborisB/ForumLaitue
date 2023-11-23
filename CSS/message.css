@@ -1,4 +1,4 @@
-#chat
+.chat
 {
     display: flex;
     flex-direction: column;
@@ -44,23 +44,6 @@ hr
     gap: 1em;
     border-top: #000 solid calc(0.1vw + 0.2em);
     padding: 2em;
-}
-
-#messageText
-{
-    padding: 0.625em;
-    border: #000 solid calc(0.05vw + 0.1em);
-    background-color: #fff;
-    max-height: 6em;
-    overflow: auto;
-}
-
-#messageText[contenteditable][placeholder]:empty:before
-{
-    content: attr(placeholder);
-    position: absolute;
-    color: gray;
-    background-color: transparent;
 }
 
 .page

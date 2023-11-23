@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <?php require_once "../Includes/head.php";
-    require_once "../Controllers/addSujetController.php";
-    require_once "../Controllers/sujetController.php";?>
+    require_once "../Controllers/sujetController.php";
+    require_once "../Controllers/addSujetController.php";?>
     <title>Categories</title>
     <link rel="stylesheet" href="../CSS/categorie.css">
 </head>
