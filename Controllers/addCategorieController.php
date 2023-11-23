@@ -27,9 +27,9 @@ if (isset($_POST["catTitle"]) && isset($_POST["catDesc"]))
     }
     if($canAdd)
     {
-        $req = $connect->prepare("INSERT INTO categorie (titre, description) VALUES(?,?)");
+        $req = $connect->prepare("INSERT INTO categorie (titreCategorie, descCategorie) VALUES(?,?)");
         $req->execute(array($catTitle, $catDesc));
-        // header("location: ../Views/forum.php");
+        header("location: ../Views/forum.php");
     }
 }
 ?>

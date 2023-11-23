@@ -20,9 +20,9 @@
             <?php foreach($categories as $categorie)
             {
                 echo
-                '<a class="masterCard" href="categorie.php?id='.$categorie["id"].'">
-                <h1>'.$categorie["titre"].'</h1>
-                <span>'.$categorie["description"]. '</span>
+                '<a class="masterCard" href="categorie.php?id='.$categorie["idCategorie"].'">
+                <h1>'.$categorie["titreCategorie"].'</h1>
+                <span>'.$categorie["descCategorie"]. '</span>
                 <h2>Cliquez pour découvir.</h2>
                 </a>';
             }
