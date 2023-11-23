@@ -5,14 +5,12 @@
     <?php require_once "../Includes/head.php";
     require_once "../Controllers/loginController.php"; ?>
     <title>Se connecter</title>
-    <link rel="stylesheet" href="../CSS/login.css">
 </head>
 
 <body>
     <div class="page">
         <h1>Se connecter</h1>
         <form class="myForm myFormColumn" id="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <span class="fieldError" id="loginErrorText"></span>
             <div class="label-input">
                 <label for="email">Email (*)</label>
                 <input type="text" name="email" id="email" value="<?php echo $email ?>">
@@ -31,7 +29,6 @@
         </form>
     </div>
     <script src="../JavaScript/button.js"></script>
-    <!-- <script src="../JavaScript/login.js"></script> -->
 </body>
 
 </html>

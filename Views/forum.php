@@ -29,8 +29,6 @@
             ?>
         </div>
     </div>
-    <script src="../JavaScript/bandeau.js"></script>
-    <script src="../JavaScript/forum.js"></script>
 </body>
 
 </html>
