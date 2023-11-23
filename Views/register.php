@@ -11,7 +11,7 @@
 <body>
     <div class="page">
         <h1>S'enregistrer</h1>
-        <form class="myForm myFormColumn" id="registerForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+        <form class="myForm myFormColumn" id="registerForm" action="register.php" method="post" enctype="multipart/form-data">
             <div class="pfpDiv">
                 <div class="label-input">
                     <label for="pfp">Photo de profil</label>

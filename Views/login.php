@@ -10,7 +10,7 @@
 <body>
     <div class="page">
         <h1>Se connecter</h1>
-        <form class="myForm myFormColumn" id="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class="myForm myFormColumn" id="loginForm" action="login.php" method="post">
             <div class="label-input">
                 <label for="email">Email (*)</label>
                 <input type="text" name="email" id="email" value="<?php echo $email ?>">

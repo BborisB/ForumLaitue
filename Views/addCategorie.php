@@ -10,7 +10,7 @@
 <body>
     <div class="page">
         <h1>Ajouter une catégorie</h1>
-        <form class="myForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class="myForm" action="addCategorie.php" method="post">
             <div class="label-input">
                 <label for="catTitle">Titre catégorie (*)</label>
                 <input type="text" maxlength="50" name="catTitle" id="catTitle" value="<?php echo $catTitle ?>">
