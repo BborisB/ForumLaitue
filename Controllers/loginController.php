@@ -15,8 +15,8 @@ if (isset($_POST["email"]) && isset($_POST["password"]))
         }
         else
         {
-            setcookie("userId", $user["id"], time() + 3600 * 24);
-            header("location: ../Views/forum.php");
+            setCookie("userId", $user["idUtilisateur"], time() + 3600 * 24);
+            header("location: ../Views/categorie.php");
         }
     }
     else
