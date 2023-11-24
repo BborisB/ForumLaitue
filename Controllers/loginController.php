@@ -2,26 +2,33 @@
 require_once "../Includes/connectDb.php";
 $email = $password = $emailErrorText = $passwordErrorText = "";
 $connect = connect();
-if (isset($_POST["email"]) && isset($_POST["password"]))
+if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $user = $connect->query("SELECT * FROM utilisateur WHERE utilisateur.email = '$email'")->fetch();
-    if($user)
+    if (isset($_POST["email"]) && isset($_POST["password"]))
     {
-        if (!password_verify($password, $user["motDePasse"]))
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $user = $connect->query("SELECT * FROM utilisateur WHERE utilisateur.email = '$email'")->fetch();
+        if($user)
         {
-            $passwordErrorText = "Le mot de passe incorrect.";
+            if (!password_verify($password, $user["motDePasse"]))
+            {
+                $passwordErrorText = "Le mot de passe est incorrect.";
+                echo json_encode(array("emailErrorText"=>$emailErrorText, "passwordErrorText" => $passwordErrorText));
+            }
+            else
+            {
+                setCookie("userId", $user["idUtilisateur"], time() + 3600 * 24);
+                $connect->exec("UPDATE utilisateur SET derniereConnexion=NOW() where email='$email'");
+                echo json_encode(array("canLogin"=>true));
+            }
         }
         else
         {
-            setCookie("userId", $user["idUtilisateur"], time() + 3600 * 24);
-            header("location: ../Views/categorie.php");
+            $emailErrorText = "L'adresse mail saisie est incorrecte.";
+            echo json_encode(array("emailErrorText"=>$emailErrorText, "passwordErrorText" => $passwordErrorText));
         }
     }
-    else
-    {
-        $emailErrorText = "L'adresse mail saisie est incorrecte.";
-    }
 }
+
 ?>

@@ -45,11 +45,80 @@ pfpPreview.addEventListener("click", (e) =>
 
 myForm.addEventListener("submit", (e)=>
 {
-    if(!verifyRegister())
+    e.preventDefault();
+    if(verifyRegister())
     {
-        e.preventDefault();
-        // myForm.style.display = "none";
-        // registerSuccessful.style.display = "flex";
+        fetch("../Controllers/registerController.php", {
+            method: "post",
+            body: new FormData(myForm)
+        }).then(response => response.json()).then(json =>
+        {
+            if(json["firstNameErrorText"] !== "")
+            {
+                firstNameErrorText.textContent = json["firstNameErrorText"];
+                firstName.style.borderColor = "#BB0000";
+            }
+            else
+            {
+                firstNameErrorText.textContent = "";
+                firstName.style.borderColor = "#000000";
+            }
+            if(json["lastNameErrorText"] !== "")
+            {
+                lastNameErrorText.textContent = json["lastNameErrorText"];
+                lastName.style.borderColor = "#BB0000";
+            }
+            else
+            {
+                lastNameErrorText.textContent = "";
+                lastName.style.borderColor = "#000000";
+            }
+            if(json["emailErrorText"] !== "")
+            {
+                emailErrorText.textContent = json["emailErrorText"];
+                email.style.borderColor = "#BB0000";
+                console.log("test");
+            }
+            else
+            {
+                emailErrorText.textContent = "";
+                email.style.borderColor = "#000000";
+            }
+            if(json["passwordErrorText"] !== "")
+            {
+                passwordErrorText.textContent = json["passwordErrorText"];
+                password.style.borderColor = "#BB0000";
+            }
+            else
+            {
+                passwordErrorText.textContent = "";
+                password.style.borderColor = "#000000";
+            }
+            if(json["confirmPasswordErrorText"] !== "")
+            {
+                confirmPasswordErrorText.textContent = json["confirmPasswordErrorText"];
+                confirmPassword.style.borderColor = "#BB0000";
+            }
+            else
+            {
+                confirmPasswordErrorText.textContent = "";
+                confirmPassword.style.borderColor = "#000000";
+            }
+            if(json["pfpErrorText"] !== "")
+            {
+                pfpErrorText.textContent = json["pfpErrorText"];
+                pfpContainer.style.borderColor = "#BB0000";
+            }
+            else
+            {
+                pfpErrorText.textContent = "";
+                pfpContainer.style.borderColor = "#000000";
+            }
+            if(json["result"])
+            {
+                location = "registerSuccess.php"
+            }
+        });   
     }
 });
 

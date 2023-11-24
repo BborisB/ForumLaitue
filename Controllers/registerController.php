@@ -89,12 +89,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             $connect = connect();
             $req = $connect->prepare("INSERT INTO utilisateur (email, nom, prenom, motDePasse, photo, derniereConnexion) VALUES(?,?,?,?,?,?)");
             $req->execute(array($email, $lastName, $firstName, password_hash($password, PASSWORD_BCRYPT), $pfpFile, null));
-            header("location: ../Views/registerSuccess.php");
+            // header("location: ../Views/registerSuccess.php");
         }
         else
         {
             $pfpErrorText = "Une erreur est survenue avec l'image de profile.";
         }
     }
+    echo json_encode(array("firstNameErrorText"=>$firstNameErrorText, "lastNameErrorText"=>$lastNameErrorText,"emailErrorText"=>$emailErrorText, "passwordErrorText"=>$passwordErrorText, "confirmPasswordErrorText"=>$confirmPasswordErrorText, "pfpErrorText"=>$pfpErrorText, "result"=>$result));
 }
 ?>

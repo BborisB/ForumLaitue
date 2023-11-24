@@ -1,5 +1,5 @@
 let buttons = document.querySelectorAll(".button");
-let submitButtons = document.querySelectorAll("input[type='submit']")
+let submitButtons = document.querySelectorAll(".submit")
 for (let i = 0; i < buttons.length; i++) 
 {
     let button = buttons[i];

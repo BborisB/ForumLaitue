@@ -16,7 +16,7 @@
         </div>
         <div class="page">
             <div class="chat-enterMessage">
-                <div class="chat">
+                <div class="chat" id="chat">
                     <h1 id="title"><?php echo $sujet["titreSujet"]?></h1>
                     <hr>
                     <div class="message">
@@ -32,8 +32,8 @@
                         echo
                         '<div class="message">
                         <div class="auteur-message">
-                        <span class="auteur">'.$message["prenom"].$message["nom"].'</span>
-                        <span>'.$message["dateMessage"].'</span>
+                        <span class="auteur">'.$message["prenom"].' '.$message["nom"].'</span>
+                        <span class="date">'.$message["dateMessage"].'</span>
                         </div>
                         <span>'.$message["textMessage"].'</span>
                         </div>
@@ -54,5 +54,6 @@
     <!-- <script src="../JavaScript/bandeau.js"></script> -->
     <script src="../JavaScript/button.js"></script>
     <script src="../JavaScript/textArea.js"></script>
+    <script src="../JavaScript/message.js"></script>
 </body>
 </html>
