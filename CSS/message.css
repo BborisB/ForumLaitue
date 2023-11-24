@@ -18,9 +18,21 @@
     width: 100%;
 }
 
-.message h2:last-child
+.auteur-message
 {
-    text-align: end;
+    display: flex;
+    gap: 1em;
+    align-items: baseline;
+}
+
+.auteur-message .auteur
+{
+    font-weight: bold;
+}
+
+.auteur-message .date
+{
+    font-size: smaller;
 }
 
 hr
