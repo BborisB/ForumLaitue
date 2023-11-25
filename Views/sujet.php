@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php require_once "../Includes/head.php";
     require_once "../Controllers/sujetController.php";
-    require_once "../Controllers/addSujetController.php";?>
+    require_once "../Controllers/addSujetController.php"; ?>
     <title>Categories</title>
     <link rel="stylesheet" href="../CSS/categorie.css">
 </head>
+
 <body>
     <div class="userWelcome">
         <span id="bandeauUser"></span>
@@ -26,13 +28,13 @@
             </thead>
             <tbody>
                 <?php
-                for($i=0;$i<count($sujets);$i++)
+                for ($i = 0; $i < count($sujets); $i++)
                 {
                     $sujet = $sujets[$i];
                     echo
                     '<tr>
-                    <td>'.($i+1).'</td>
-                    <td><a href="message.php?idSujet='.$sujet["idSujet"].'">'.$sujet["titreSujet"].'</a></td>
+                    <td>' . ($i + 1) . '</td>
+                    <td><a href="message.php?idSujet=' . $sujet["idSujet"] . '">' . $sujet["titreSujet"] . '</a></td>
                     </tr>';
                 }
                 ?>
@@ -41,12 +43,19 @@
         <button class="button" id="addBtn">Ajouter un sujet</button>
     </div>
     <dialog id="addSujetDialog">
-        <form class="addWindow" action="<?php echo "sujet.php?idCat=".$_GET["idCat"]?>" method="post">
+        <form class="addWindow" action="<?php echo "sujet.php?idCat=" . $_GET["idCat"] ?>" method="post">
             <h1>Ajouter un sujet</h1>
             <div class="label-input">
                 <label for="titreSujet">Titre du sujet</label>
                 <input name="titreSujet" type="text" id="titreSujet">
                 <span class="fieldError" id="titreSujetTextError"></span>
+            </div>
+            <div class="label-input">
+                <label for="message">Message</label>
+                <div class="myTextAreaDiv">
+                    <textarea class="myTextArea" name="message" id="message" rows="1"></textarea>
+                </div>
+                <span class="fieldError" id="messageTextError"></span>
             </div>
             <div class="multipleElement">
                 <input class="button" type="submit" value="Ajouter">
@@ -57,5 +66,7 @@
     <!-- <script src="../JavaScript/bandeau.js"></script> -->
     <script src="../JavaScript/button.js"></script>
     <script src="../JavaScript/categorie.js"></script>
+    <script src="../JavaScript/textArea.js"></script>
 </body>
+
 </html>
