@@ -6,11 +6,6 @@
     <link rel="stylesheet" href="CSS/acceuil.css">
 </head>
 <body>
-    <div class="userWelcome">
-        <span id="bandeauUser"></span>
-        <span id="bandeauDate">Bienvenue. Enregistrez vous, ou connectez vous.</span>
-        <span id="bandeauConnection"></span>
-    </div>
     <div class="page">
         <h1>Bienvenue !</h1>
         <div class="imgAcceuilDiv">
