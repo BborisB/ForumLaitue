@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $idUtilisateur = $_COOKIE["userId"];
         $idCat = $_GET["idCat"];
         $canSubmit = true;
-        $errors = array();
+        $errors = array("titreSujetErrorText"=>"", "messageErrorText"=>"");
         if($titreSujet!=="")
         {
             $testSujet = $connect->query("SELECT * FROM sujet WHERE titreSujet = '$titreSujet'")->fetch();
@@ -40,6 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $req = $connect->prepare("INSERT INTO sujet (titreSujet, idUtilisateur, idCategorie) VALUES(?,?,?)");
             $req->execute(array($titreSujet, $idUtilisateur, $idCat));
+            $idSujet = $connect->lastInsertId();
+            $req = $connect->prepare("INSERT INTO message (textMessage, dateMessage, idUtilisateur, idSujet) VALUES(?,NOW(),?,?)");
+            $req->execute(array($message, $idUtilisateur, $idSujet));
+
         }
         $errors["canSubmit"] = $canSubmit;
         // header("location: ../Views/sujet.php?idCat=".$idCat);

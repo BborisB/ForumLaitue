@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             }
             else
             {
-                setCookie("userId", $user["idUtilisateur"], time() + 3600 * 24);
+                setCookie("userId", $user["idUtilisateur"], time() + 3600 * 24, "/");
                 $connect->exec("UPDATE utilisateur SET derniereConnexion=NOW() where email='$email'");
                 echo json_encode(array("canLogin"=>true));
             }

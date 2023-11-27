@@ -9,11 +9,7 @@
 </head>
 
 <body>
-    <div class="userWelcome">
-        <span id="bandeauUser"></span>
-        <span id="bandeauDate"></span>
-        <span id="bandeauConnection"></span>
-    </div>
+    <?php require_once "../Includes/bandeauUser.php"?>
     <div class="page">
         <h1>Forum</h1>
         <div class="multipleElement">

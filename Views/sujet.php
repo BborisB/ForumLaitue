@@ -3,18 +3,13 @@
 
 <head>
     <?php require_once "../Includes/head.php";
-    require_once "../Controllers/sujetController.php";
-    require_once "../Controllers/addSujetController.php"; ?>
+    require_once "../Controllers/sujetController.php";?>
     <title>Categories</title>
     <link rel="stylesheet" href="../CSS/categorie.css">
 </head>
 
 <body>
-    <div class="userWelcome">
-        <span id="bandeauUser"></span>
-        <span id="bandeauDate"></span>
-        <span id="bandeauConnection"></span>
-    </div>
+    <?php require_once "../Includes/bandeauUser.php"?>
     <div class="page">
         <h1 id="pageTitle"></h1>
         <table class="myTable">
@@ -43,19 +38,19 @@
         <button class="button" id="addBtn">Ajouter un sujet</button>
     </div>
     <dialog id="addSujetDialog">
-        <form class="addWindow" action="<?php echo "sujet.php?idCat=" . $_GET["idCat"] ?>" method="post">
+        <form id="addSujetForm" class="addWindow" action="<?php echo "../Controllers/addSujetController.php?idCat=" . $_GET["idCat"] ?>" method="post">
             <h1>Ajouter un sujet</h1>
             <div class="label-input">
                 <label for="titreSujet">Titre du sujet</label>
                 <input name="titreSujet" type="text" id="titreSujet">
-                <span class="fieldError" id="titreSujetTextError"></span>
+                <span class="fieldError" id="titreSujetErrorText"></span>
             </div>
             <div class="label-input">
                 <label for="message">Message</label>
-                <div class="myTextAreaDiv">
-                    <textarea class="myTextArea" name="message" id="message" rows="1"></textarea>
+                <div id="messageDiv" class="myTextAreaDiv">
+                    <textarea class="myTextArea" id="message" name="message" rows="1"></textarea>
                 </div>
-                <span class="fieldError" id="messageTextError"></span>
+                <span class="fieldError" id="messageErrorText"></span>
             </div>
             <div class="multipleElement">
                 <input class="button" type="submit" value="Ajouter">
@@ -67,6 +62,7 @@
     <script src="../JavaScript/button.js"></script>
     <script src="../JavaScript/categorie.js"></script>
     <script src="../JavaScript/textArea.js"></script>
+    <script src="../JavaScript/sujet.js"></script>
 </body>
 
 </html>

@@ -9,11 +9,7 @@
 </head>
 <body>
     <div class="newBody">
-        <div class="userWelcome">
-            <span id="bandeauUser"></span>
-            <span id="bandeauDate"></span>
-            <span id="bandeauConnection"></span>
-        </div>
+        <?php require_once "../Includes/bandeauUser.php"?>
         <div class="page">
             <div class="chat-enterMessage">
                 <div class="chat" id="chat">

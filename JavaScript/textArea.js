@@ -4,7 +4,7 @@ myTextAreas.forEach(myTextArea =>
     function textAreaResize()
     {
         myTextArea.style.height = "1em";
-        myTextArea.style.height = "calc(" + myTextArea.scrollHeight + "px - 0.15em)";
+        myTextArea.style.height = "calc(" + myTextArea.scrollHeight + "px - 1.25em)";
         myTextArea.parentElement.scrollTop = myTextArea.parentElement.scrollHeight;
     }
     textAreaResize();

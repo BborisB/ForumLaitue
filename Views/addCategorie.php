@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <?php require_once "../Includes/bandeauUser.php"?>
     <div class="page">
         <h1>Ajouter une catégorie</h1>
         <form class="myForm" action="addCategorie.php" method="post">
