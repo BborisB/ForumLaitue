@@ -11,7 +11,7 @@
 <body>
     <?php require_once "../Includes/bandeauUser.php"?>
     <div class="page">
-        <h1 id="pageTitle"></h1>
+        <h1 id="pageTitle"><?php echo $catName?></h1>
         <table class="myTable">
             <thead>
                 <tr>
@@ -30,6 +30,8 @@
                     '<tr>
                     <td>' . ($i + 1) . '</td>
                     <td><a href="message.php?idSujet=' . $sujet["idSujet"] . '">' . $sujet["titreSujet"] . '</a></td>
+                    <td>'.$sujet["dernierMessage"].'</td>
+                    <td>'.$sujet["prenom"].' '.$sujet["nom"].'</td>
                     </tr>';
                 }
                 ?>
@@ -48,7 +50,7 @@
             <div class="label-input">
                 <label for="message">Message</label>
                 <div id="messageDiv" class="myTextAreaDiv">
-                    <textarea class="myTextArea" id="message" name="message" rows="1"></textarea>
+                    <textarea class="myTextArea" id="message" name="message" rows="1" spellcheck="false"></textarea>
                 </div>
                 <span class="fieldError" id="messageErrorText"></span>
             </div>

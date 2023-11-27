@@ -15,10 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $errors = array("titreSujetErrorText"=>"", "messageErrorText"=>"");
         if($titreSujet!=="")
         {
-            $testSujet = $connect->query("SELECT * FROM sujet WHERE titreSujet = '$titreSujet'")->fetch();
+            $testSujet = $connect->query("SELECT categorie.titreCategorie FROM sujet JOIN categorie ON sujet.idCategorie = categorie.idCategorie WHERE sujet.titreSujet = '$titreSujet'")->fetch();
             if($testSujet)
             {
-                $errors["titreSujetErrorText"] = "Un sujet avec le même titre existe déjà dans la catégorie ."; //afficher le nom de la catégorie en question
+                $errors["titreSujetErrorText"] = "Un sujet avec le même titre existe déjà dans la catégorie ".$testSujet["titreCategorie"]."."; //afficher le nom de la catégorie en question
                 $canSubmit = false;
             }
         }
