@@ -7,8 +7,8 @@ if(isset($_GET["idSujet"]))
     $sujet = $connect->query("SELECT * FROM sujet WHERE sujet.idSujet = '$idSujet'")->fetch();
     if($sujet)
     {
-        $messages = $connect->query("SELECT message.textMessage, utilisateur.prenom, utilisateur.nom, message.dateMessage FROM message 
-        JOIN utilisateur ON message.idUtilisateur = utilisateur.idUtilisateur WHERE message.idSujet = " . $idSujet);
+        $messages = $connect->query("SELECT message.textMessage, utilisateur.prenom, utilisateur.nom, DATE_FORMAT(message.dateMessage, '%e/%c/%Y %H:%i:%S') as dateMessage FROM message 
+        JOIN utilisateur ON message.idUtilisateur = utilisateur.idUtilisateur WHERE message.idSujet = " . $idSujet)->fetchAll();
     }
 }
 else

@@ -3,6 +3,14 @@ let titreSujetErrorText = document.getElementById("titreSujetErrorText");
 let messageErrorText = document.getElementById("messageErrorText");
 let titreSujet = document.getElementById("titreSujet");
 let messageDiv = document.getElementById("messageDiv");
+let dialog = document.getElementById("addSujetDialog");
+dialog.addEventListener("close", () =>
+{
+    titreSujetErrorText.textContent = "";
+    titreSujet.style.borderColor = "#000000"
+    messageErrorText.textContent = "";
+    messageDiv.style.borderColor = "#000000"
+})
 addSujetForm.addEventListener("submit", (e) =>
 {
     e.preventDefault();
@@ -31,6 +39,7 @@ addSujetForm.addEventListener("submit", (e) =>
             messageErrorText.textContent = "";
             messageDiv.style.borderColor = "#000000"
         }
+        if(json["canSubmit"])
+            location.reload();
     });
-    location.reload();
 });

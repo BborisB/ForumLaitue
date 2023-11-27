@@ -15,14 +15,6 @@
                 <div class="chat" id="chat">
                     <h1 id="title"><?php echo $sujet["titreSujet"]?></h1>
                     <hr>
-                    <div class="message">
-                        <div class="auteur-message">
-                            <span class="auteur">auteur</span>
-                            <span class="date">XX/XX/XXXX XX:XX</span>
-                        </div>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt inventore aperiam repudiandae soluta ipsum, at iure ipsa eos sapiente repellat suscipit quam cum ad magnam provident quae accusantium est maiores!</span>
-                    </div>
-                    <hr>
                     <?php foreach($messages as $message)
                     {
                         echo
