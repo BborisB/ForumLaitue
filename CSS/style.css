@@ -170,4 +170,14 @@ h2
     {
         min-width: 0;
     }
+
+    .userWelcome
+    {
+        flex-direction: column;
+    }
+
+    .userWelcome *
+    {
+        overflow: visible;
+    }
 }
