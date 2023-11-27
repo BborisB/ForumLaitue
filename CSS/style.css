@@ -129,12 +129,10 @@ h2
 .userWelcome *
 {
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    min-width: 170px;
     text-align: center;
     padding: 1px;
     flex: 1 0 0;
+    word-break: break-word;
 }
 
 .myTextAreaDiv
